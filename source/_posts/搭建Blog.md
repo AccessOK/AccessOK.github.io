@@ -14,10 +14,6 @@ tags:
 
 # 搭建Blog
 
-## github创建项目
-
-
-
 ## 安装node npm n
 
 - 安装node.js

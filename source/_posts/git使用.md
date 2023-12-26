@@ -5,14 +5,15 @@ description: Linux git使用
 type: "tags"
 comments: true
 categories:
-- Learning Tools
 - Linux
+- Tools
 - Git
 tags:
 - Linux
 - Git
 ---
 # 远程配置
+"待补充···"
 
 # 本地配置
 

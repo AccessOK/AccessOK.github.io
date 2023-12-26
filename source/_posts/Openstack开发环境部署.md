@@ -12,9 +12,9 @@ tags:
 ---
 kolla-ansible
 参考文档：
-https://docs.openstack.org/kolla-ansible/latest/user/quickstart.html
-https://docs.openstack.org/kolla-ansible/latest/user/troubleshooting.html
-https://docs.openstack.org/kolla-ansible/latest/contributor/kolla-for-openstack-development.html
+<https://docs.openstack.org/kolla-ansible/latest/user/quickstart.html>
+<https://docs.openstack.org/kolla-ansible/latest/user/troubleshooting.html>
+<https://docs.openstack.org/kolla-ansible/latest/contributor/kolla-for-openstack-development.html>
 
 Gateway
 pdb

@@ -41,18 +41,17 @@ $ sudo rm /usr/bin/python
 #为新版python创建软链接
 $ sudo ln -s /usr/bin/python3.8 /usr/bin/python
 ```
-5. 配置环境变量
+4. 配置环境变量
 修改用户主目录下名为.bash_profile的文件，配置PATH环境变量并使其生效。
-
-```plain
-cd ~
-vim .bash_profile
+```bash
+$ cd ~
+$ vim .bash_profile
 # ... 此处省略上面的代码 ...
 export PATH=$PATH:/usr/local/python38/bin
 # ... 此处省略下面的代码 ...
 ```
-6. 激活环境变量
-```plain
+5. 激活环境变量
+```bash
 $ source .bash_profile
 ```
 # 修改Python默认版本
@@ -76,7 +75,6 @@ Python 3.7.3
 ```
 # pip源配置
 pip配置信息保存路径：~/.config/pip/pip.conf
-
 ```bash
 #配置清华源
 $ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
@@ -85,7 +83,6 @@ $ pip config unset global.index-url
 ```
 # venv环境配置
 1.创建独立的python运行环境
-
 ```bash
 #创建独立目录
 $ mkdir venv

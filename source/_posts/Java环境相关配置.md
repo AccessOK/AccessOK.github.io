@@ -13,11 +13,11 @@ tags:
 ---
 
 # Java-环境安装配置
-Link： [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
+Link： <https://www.oracle.com/java/technologies/downloads/>
 
 下载tar包，解压到指定的位置
 
-修改环境变量-Linux
+修改环境变量(Linux)
 
 ```plain
 vim /etc/profile
@@ -27,7 +27,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export JRE_HOME=$JAVA_HOME/jre
 ```
 # maven配置
-Link：[https://maven.apache.org/](https://maven.apache.org/)
+Link：<https://maven.apache.org/>
 
 ```plain
 export MAVEN_HOME=/opt/maven/apache-maven-3.9.4

@@ -10,3 +10,13 @@ categories:
 tags:
 - openstack
 ---
+kolla-ansible
+参考文档：
+https://docs.openstack.org/kolla-ansible/latest/user/quickstart.html
+https://docs.openstack.org/kolla-ansible/latest/user/troubleshooting.html
+https://docs.openstack.org/kolla-ansible/latest/contributor/kolla-for-openstack-development.html
+
+Gateway
+pdb
+查看容器挂载情况
+docker inspect container_name | grep Mounts -A 20

@@ -89,11 +89,16 @@ tags:
   注：依赖hexo-renderer-sass安装时容易报错，很可能是国内网络问题，请尝试使用代理或者切换至NPM的国内镜像源安装。
   ```
 
-- 创建"关于页"
+- 创建"About页"
 
 ```bash
 hexo new page about
 创建成功后，编辑博客目录下 /source/about/index.md，添加 layout 属性。
 ```
+- 创建"Archive页"
 
-  
+```bash
+hexo new page archive
+创建成功后，编辑博客目录下 /source/archive/index.md。
+```
+- hexo使用参考：<https://hexo.io/zh-cn/>

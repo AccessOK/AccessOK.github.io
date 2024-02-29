@@ -35,5 +35,10 @@ export PATH=${PATH}:${MAVEN_HOME}/bin
 ```
 # 运行jar包
 ```bash
+# 打包jar
+mvn package ***.jar
+# 直接运行
 java -jar ***.jar
+# 开启后台运行
+nohup java -jar ***.jar &
 ```

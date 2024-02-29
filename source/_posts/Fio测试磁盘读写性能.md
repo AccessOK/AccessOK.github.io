@@ -1,8 +1,18 @@
-对比ceph，lvm，nvme存储性能
-
+---
+title: Fio测试磁盘读写性能
+date: 2023-12-25 10:27:28
+description: Fio测试磁盘读写性能
+type: "tags"
+comments: true
+categories:
+- Linux
+- Tools
+- Test
+tags:
+- Linux
+- Test
+---
 # 环境
-
-系统： uniontechos-server-20-1060a-amd64-release-20230512-0152-iso最小化安装
 
 内核：4.10
 
@@ -11,12 +21,6 @@ cpu：8
 内存：8GB
 
 硬盘：100GB
-
-10.10.15.133:lvm
-
-10.10.15.135:nvme
-
-10.10.15.144:ceph
 
 # 安装fio
 
@@ -33,12 +37,6 @@ yum install fio
   ```bash
   fio -name=iouring_test -filename=/mnt/vdd/testfile -iodepth=128 -thread -rw=randread -ioengine=io_uring -sqthread_poll=1 -direct=1 -bs=4k -size=10G -numjobs=1 -runtime=120 -group_reporting
   ```
-
-  ![](/home/wang/UOS/AccessOK/blog/source/images/image-20240112161247302.png)
-
-  ![](/home/wang/UOS/AccessOK/blog/source/images/image-20240112161504454.png)
-
-  ![image-20240112161655349](/home/wang/UOS/AccessOK/blog/source/images/image-20240112161655349.png)
 
 - 4k 随机写
 

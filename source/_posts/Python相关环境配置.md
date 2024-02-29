@@ -11,6 +11,7 @@ tags:
 - Linux
 - Python
 ---
+
 # 安装Python
 1. 下载python
 ```bash

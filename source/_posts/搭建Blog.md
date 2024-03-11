@@ -67,7 +67,12 @@ tags:
   ``` bash
   npm install
   ```
+- 打包成dist
 
+  ``` bash
+  npm run build
+  ```
+  
 - 运行hexo项目
 
   ```bash

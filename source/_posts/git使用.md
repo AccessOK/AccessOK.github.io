@@ -68,5 +68,13 @@ git push origin :<cloud-branch>
 
 ```bash
 # 本地通常会有无数次 commit ，可以合并“相同功能”的多个 commit，以保持历史的简洁。
+git commit --amend 
+```
 
+# 添加多个远程仓库
+```bash
+#添加远程仓库地址，并将其命名。
+git remote add <name> <url>
+#提交到远程仓库，origin是默认仓库地址。
+git push <name> <本地分支>:<远程仓库分支>
 ```

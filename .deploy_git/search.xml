@@ -126,6 +126,35 @@
     
     
     <entry>
+      <title>java安装配置</title>
+      <link href="/2023/12/15/Java%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"/>
+      <url>/2023/12/15/Java%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java-环境安装配置"><a href="#Java-环境安装配置" class="headerlink" title="Java-环境安装配置"></a>Java-环境安装配置</h1><p>Link： <a href="https://www.oracle.com/java/technologies/downloads/">https://www.oracle.com/java/technologies/downloads/</a></p><p>下载tar包，解压到指定的位置</p><p>修改环境变量(Linux)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/java/jdk1.8.0_381</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br></pre></td></tr></table></figure><h1 id="maven配置"><a href="#maven配置" class="headerlink" title="maven配置"></a>maven配置</h1><p>Link：<a href="https://maven.apache.org/">https://maven.apache.org/</a></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export MAVEN_HOME=/opt/maven/apache-maven-3.9.4</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;MAVEN_HOME&#125;/bin</span><br></pre></td></tr></table></figure><h1 id="运行jar包"><a href="#运行jar包" class="headerlink" title="运行jar包"></a>运行jar包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包jar</span></span><br><span class="line">mvn package ***.jar</span><br><span class="line"><span class="comment"># 直接运行</span></span><br><span class="line">java -jar ***.jar</span><br><span class="line"><span class="comment"># 开启后台运行</span></span><br><span class="line"><span class="built_in">nohup</span> java -jar ***.jar &amp;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python安装配置</title>
       <link href="/2023/12/15/Python%E7%9B%B8%E5%85%B3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
       <url>/2023/12/15/Python%E7%9B%B8%E5%85%B3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
@@ -267,35 +296,6 @@
             <tag> Linux </tag>
             
             <tag> 磁盘 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>java安装配置</title>
-      <link href="/2023/12/15/Java%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"/>
-      <url>/2023/12/15/Java%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Java-环境安装配置"><a href="#Java-环境安装配置" class="headerlink" title="Java-环境安装配置"></a>Java-环境安装配置</h1><p>Link： <a href="https://www.oracle.com/java/technologies/downloads/">https://www.oracle.com/java/technologies/downloads/</a></p><p>下载tar包，解压到指定的位置</p><p>修改环境变量(Linux)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/java/jdk1.8.0_381</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br></pre></td></tr></table></figure><h1 id="maven配置"><a href="#maven配置" class="headerlink" title="maven配置"></a>maven配置</h1><p>Link：<a href="https://maven.apache.org/">https://maven.apache.org/</a></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export MAVEN_HOME=/opt/maven/apache-maven-3.9.4</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;MAVEN_HOME&#125;/bin</span><br></pre></td></tr></table></figure><h1 id="运行jar包"><a href="#运行jar包" class="headerlink" title="运行jar包"></a>运行jar包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包jar</span></span><br><span class="line">mvn package ***.jar</span><br><span class="line"><span class="comment"># 直接运行</span></span><br><span class="line">java -jar ***.jar</span><br><span class="line"><span class="comment"># 开启后台运行</span></span><br><span class="line"><span class="built_in">nohup</span> java -jar ***.jar &amp;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> Linux </category>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-            <tag> Java </tag>
             
         </tags>
       

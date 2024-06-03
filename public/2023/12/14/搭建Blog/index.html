@@ -31,6 +31,11 @@
 <li><p>运行hexo项目</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>清楚hexo部署数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署到服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根据_config.yaml配置文件中的仓库地址，部署到服务器。</span></span><br><span class="line">hexo delpoy</span><br></pre></td></tr></table></figure></li>
 <li><p>替换主题</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">安装主题和渲染器：</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/tufu9441/maupassant-hexo.git themes/maupassant  </span><br><span class="line">$ npm install hexo-renderer-pug --save  </span><br><span class="line">$ npm install hexo-renderer-sass --save  </span><br><span class="line">编辑Hexo目录下的 _config.yml，将theme的值改为maupassant。</span><br><span class="line">注：依赖hexo-renderer-sass安装时容易报错，很可能是国内网络问题，请尝试使用代理或者切换至NPM的国内镜像源安装。</span><br></pre></td></tr></table></figure>
 </li>

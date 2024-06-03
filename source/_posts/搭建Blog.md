@@ -79,6 +79,17 @@ tags:
   hexo server
   ```
 
+- 清楚hexo部署数据
+
+  ```bash
+  hexo clean
+  ```
+
+- 部署到服务器
+  ```bash
+  #根据_config.yaml配置文件中的仓库地址，部署到服务器。
+  hexo delpoy
+  ```
 - 替换主题
 
   ```bash

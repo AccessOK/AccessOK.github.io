@@ -82,6 +82,7 @@ tags:
 - 清楚hexo部署数据
 
   ```bash
+  #可删除.deploy_git文件夹在执行hexo clean和hexo deploy
   hexo clean
   ```
 

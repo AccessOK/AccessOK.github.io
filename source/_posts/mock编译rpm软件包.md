@@ -81,3 +81,9 @@ $ rpmbuild -ba -D "_topdir `pwd`" /path/to/*.spec
 
 3.提交rpm包
 
+# rpm module开启
+
+在repo的配置文件中添加,即可开启module模块下载
+```bash
+module_hotfixes = true
+```

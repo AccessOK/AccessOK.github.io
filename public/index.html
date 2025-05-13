@@ -73,6 +73,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-nova开发usb进程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2025-05-13T11:38:58.262Z" itemprop="datePublished">2025-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="nova目录分析"><a href="#nova目录分析" class="headerlink" title="nova目录分析"></a>nova目录分析</h1><h2 id="nova组件："><a href="#nova组件：" class="headerlink" title="nova组件："></a>nova组件：</h2><ul>
+<li>nova-api: nova-api主要接受外部nova外部api调用。</li>
+<li>nova-conductor:nova-conductor主要操作数据库。</li>
+<li>nova-comoute：主要通过libvirt等下层组件操作实例。</li>
+</ul>
+<h2 id="nova目录详情："><a href="#nova目录详情：" class="headerlink" title="nova目录详情："></a>nova目录详情：</h2><p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/26098815/1697079908226-8056d8e6-9aa7-4765-a7a3-44364d039db6.jpeg"></p>
+<h1 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h1><h1 id="sqlalchemy"><a href="#sqlalchemy" class="headerlink" title="sqlalchemy"></a>sqlalchemy</h1><h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><ul>
+<li>nova 早期的OpenStack只有nova一个数据库，里面存放了所有的关于虚拟机的表。如instance表：存放每一个主机主机信息（后面会介绍到）；quotas表：项目配额信息 ；fixed_ips表；块存储设备表等。</li>
+<li>nova_api 从nova数据库中移除的一部分全局数据表组成的数据库，如flavors、key_pairs、quotas等。noav_api的出现是为了解决大规模时消息队列和数据库瓶颈问题。</li>
+<li>nova_cell0 nova_cell0数据中存放了所有创建失败的instance。虚拟机创建失败后不属于任何一个cell，那么就记录在nova_cell0中。</li>
+</ul>
+<p>参考：<a target="_blank" rel="noopener" href="https://hellowac.github.io/technology/python/sqlalchemy/">https://hellowac.github.io/technology/python/sqlalchemy/</a></p>
+<h2 id="nova-manager-："><a href="#nova-manager-：" class="headerlink" title="nova-manager ："></a>nova-manager ：</h2><p>查看当前数据库版本：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1694767694502-66030176-97af-4937-a435-c5cf10c24c4c.png#averageHue=%23242424&clientId=u2abe46d4-9561-4&from=paste&height=48&id=uc1d572e7&originHeight=60&originWidth=597&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=10895&status=done&style=none&taskId=uf0ad4f28-44e0-4bda-a19a-1f139f01310&title=&width=477.6" alt="image.png"><br>注：当前数据库版本对应：nova&#x2F;db&#x2F;sqlalchemy&#x2F;migrate_repo&#x2F;versions&#x2F;中文件版本<br><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1694767901297-19b51841-3ed4-42d7-bf3e-f40a35adac8b.png#averageHue=%23e1e4d9&clientId=u2abe46d4-9561-4&from=paste&height=57&id=u8c277543&originHeight=71&originWidth=626&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=13762&status=done&style=none&taskId=ud0c0f397-4ba8-46af-908c-535569b2c09&title=&width=500.8" alt="image.png"><br>可以使用：nova-manage db sync 同步数据库<br><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1694768037496-897dff96-cbf0-456b-8b07-add31b402d3a.png#averageHue=%23242424&clientId=u2abe46d4-9561-4&from=paste&height=220&id=uc0d53f1f&originHeight=275&originWidth=1870&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=70814&status=done&style=none&taskId=ud35e5ad4-0cfe-48eb-8962-9718c0d3b4c&title=&width=1496" alt="image.png"><br>同步失败，报错信息：<br>ERROR: Could not access cell0.<br>Has the nova_api database been created?<br>Has the nova_cell0 database been created?<br>Has “nova-manage api_db sync” been run?<br>Has “nova-manage cell_v2 map_cell0” been run?<br>Is [api_database]&#x2F;connection set in nova.conf?<br>Is the cell0 database connection URL correct?<br>Error: Foreign key associated with column ‘instance_actions.instance_uuid’ could not find table ‘instances’ with which to generate a foreign key to target column ‘uuid。<br>参考：<a target="_blank" rel="noopener" href="https://docs.openstack.org/nova/rocky/cli/nova-manage.html">https://docs.openstack.org/nova/rocky/cli/nova-manage.html</a><br>分析问题：其他环境运行正常，删除新增的实体类文件之后，运行正常。<br>解决问题：学习nova创建实体类并同步创建数据库。<br>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/chengqiuming/article/details/79672973">https://blog.csdn.net/chengqiuming/article/details/79672973</a><br>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/28047027/sqlalchemy-not-find-table-for-creating-foreign-key">https://stackoverflow.com/questions/28047027/sqlalchemy-not-find-table-for-creating-foreign-key</a><br>在实体类文件中添加meta.reflect()函数之后，执行nova-manage db sync ${version}成功。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nova-manage db sync 413</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1695020664736-595464c3-6758-4c32-88c0-58eab95b44e7.png#averageHue=%23e6dba7&clientId=u4b9cd771-95ab-4&from=paste&height=864&id=ueca8c230&originHeight=1080&originWidth=1870&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=337902&status=done&style=none&taskId=uffc198c6-a123-471b-b581-a2d8af1a65a&title=&width=1496" alt="image.png"><br>在nova_cell0数据库创建devices数据表成功。<br><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1695020575978-1a79ae14-767e-4f63-8afb-3f27f7548208.png#averageHue=%23f9f9f8&clientId=u4b9cd771-95ab-4&from=paste&height=864&id=uf2b38cc2&originHeight=1080&originWidth=1920&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=146635&status=done&style=none&taskId=u1c3ea37e-3f4f-4b42-b526-5204d17ef58&title=&width=1536" alt="image.png"><br>注：nova_cell0 是不适用，用于保存失败数据。<br>分析原因：nova_api和nova_conductorl中的&#x2F;etc&#x2F;nova&#x2F;nova.conf地址不一样。为什么不一样？下回分析。<br>解决方案：操作数据库的时候单独配置数据库链接数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nova-manage db sync \</span><br><span class="line">   --database_connection mysql+pymysql://root:secretmysql@dbserver/nova_cell0?charset=utf8</span><br></pre></td></tr></table></figure>
+<h1 id="开发查询接口"><a href="#开发查询接口" class="headerlink" title="开发查询接口"></a>开发查询接口</h1><p>报错如下：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1696926488107-53fe9b2f-b46c-478d-a67b-a900224e5c45.png#averageHue=%232c2e20&clientId=ube672ce4-aec2-4&from=paste&height=864&id=u8892f3a1&originHeight=1080&originWidth=1920&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=501052&status=done&style=none&taskId=u70a770cd-2815-4b1e-a73b-d80da7b7951&title=&width=1536" alt="image.png"><br>引入定义装饰器的类</p>
+<h1 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h1><p>重启nova-compute立即执行定时任务。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/" data-id="cmamggsdm0015qsd1azqv4prx" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-kolla构建镜像" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/" class="article-date">
@@ -121,53 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/" data-id="cmamgeky10016d4d1dyxqgnpi" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-nova开发usb进程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/" class="article-date">
-  <time class="dt-published" datetime="2025-05-13T11:38:58.262Z" itemprop="datePublished">2025-05-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="nova目录分析"><a href="#nova目录分析" class="headerlink" title="nova目录分析"></a>nova目录分析</h1><h2 id="nova组件："><a href="#nova组件：" class="headerlink" title="nova组件："></a>nova组件：</h2><ul>
-<li>nova-api: nova-api主要接受外部nova外部api调用。</li>
-<li>nova-conductor:nova-conductor主要操作数据库。</li>
-<li>nova-comoute：主要通过libvirt等下层组件操作实例。</li>
-</ul>
-<h2 id="nova目录详情："><a href="#nova目录详情：" class="headerlink" title="nova目录详情："></a>nova目录详情：</h2><p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/26098815/1697079908226-8056d8e6-9aa7-4765-a7a3-44364d039db6.jpeg"></p>
-<h1 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h1><h1 id="sqlalchemy"><a href="#sqlalchemy" class="headerlink" title="sqlalchemy"></a>sqlalchemy</h1><h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><ul>
-<li>nova 早期的OpenStack只有nova一个数据库，里面存放了所有的关于虚拟机的表。如instance表：存放每一个主机主机信息（后面会介绍到）；quotas表：项目配额信息 ；fixed_ips表；块存储设备表等。</li>
-<li>nova_api 从nova数据库中移除的一部分全局数据表组成的数据库，如flavors、key_pairs、quotas等。noav_api的出现是为了解决大规模时消息队列和数据库瓶颈问题。</li>
-<li>nova_cell0 nova_cell0数据中存放了所有创建失败的instance。虚拟机创建失败后不属于任何一个cell，那么就记录在nova_cell0中。</li>
-</ul>
-<p>参考：<a target="_blank" rel="noopener" href="https://hellowac.github.io/technology/python/sqlalchemy/">https://hellowac.github.io/technology/python/sqlalchemy/</a></p>
-<h2 id="nova-manager-："><a href="#nova-manager-：" class="headerlink" title="nova-manager ："></a>nova-manager ：</h2><p>查看当前数据库版本：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1694767694502-66030176-97af-4937-a435-c5cf10c24c4c.png#averageHue=%23242424&clientId=u2abe46d4-9561-4&from=paste&height=48&id=uc1d572e7&originHeight=60&originWidth=597&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=10895&status=done&style=none&taskId=uf0ad4f28-44e0-4bda-a19a-1f139f01310&title=&width=477.6" alt="image.png"><br>注：当前数据库版本对应：nova&#x2F;db&#x2F;sqlalchemy&#x2F;migrate_repo&#x2F;versions&#x2F;中文件版本<br><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1694767901297-19b51841-3ed4-42d7-bf3e-f40a35adac8b.png#averageHue=%23e1e4d9&clientId=u2abe46d4-9561-4&from=paste&height=57&id=u8c277543&originHeight=71&originWidth=626&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=13762&status=done&style=none&taskId=ud0c0f397-4ba8-46af-908c-535569b2c09&title=&width=500.8" alt="image.png"><br>可以使用：nova-manage db sync 同步数据库<br><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1694768037496-897dff96-cbf0-456b-8b07-add31b402d3a.png#averageHue=%23242424&clientId=u2abe46d4-9561-4&from=paste&height=220&id=uc0d53f1f&originHeight=275&originWidth=1870&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=70814&status=done&style=none&taskId=ud35e5ad4-0cfe-48eb-8962-9718c0d3b4c&title=&width=1496" alt="image.png"><br>同步失败，报错信息：<br>ERROR: Could not access cell0.<br>Has the nova_api database been created?<br>Has the nova_cell0 database been created?<br>Has “nova-manage api_db sync” been run?<br>Has “nova-manage cell_v2 map_cell0” been run?<br>Is [api_database]&#x2F;connection set in nova.conf?<br>Is the cell0 database connection URL correct?<br>Error: Foreign key associated with column ‘instance_actions.instance_uuid’ could not find table ‘instances’ with which to generate a foreign key to target column ‘uuid。<br>参考：<a target="_blank" rel="noopener" href="https://docs.openstack.org/nova/rocky/cli/nova-manage.html">https://docs.openstack.org/nova/rocky/cli/nova-manage.html</a><br>分析问题：其他环境运行正常，删除新增的实体类文件之后，运行正常。<br>解决问题：学习nova创建实体类并同步创建数据库。<br>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/chengqiuming/article/details/79672973">https://blog.csdn.net/chengqiuming/article/details/79672973</a><br>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/28047027/sqlalchemy-not-find-table-for-creating-foreign-key">https://stackoverflow.com/questions/28047027/sqlalchemy-not-find-table-for-creating-foreign-key</a><br>在实体类文件中添加meta.reflect()函数之后，执行nova-manage db sync ${version}成功。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nova-manage db sync 413</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1695020664736-595464c3-6758-4c32-88c0-58eab95b44e7.png#averageHue=%23e6dba7&clientId=u4b9cd771-95ab-4&from=paste&height=864&id=ueca8c230&originHeight=1080&originWidth=1870&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=337902&status=done&style=none&taskId=uffc198c6-a123-471b-b581-a2d8af1a65a&title=&width=1496" alt="image.png"><br>在nova_cell0数据库创建devices数据表成功。<br><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1695020575978-1a79ae14-767e-4f63-8afb-3f27f7548208.png#averageHue=%23f9f9f8&clientId=u4b9cd771-95ab-4&from=paste&height=864&id=uf2b38cc2&originHeight=1080&originWidth=1920&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=146635&status=done&style=none&taskId=u1c3ea37e-3f4f-4b42-b526-5204d17ef58&title=&width=1536" alt="image.png"><br>注：nova_cell0 是不适用，用于保存失败数据。<br>分析原因：nova_api和nova_conductorl中的&#x2F;etc&#x2F;nova&#x2F;nova.conf地址不一样。为什么不一样？下回分析。<br>解决方案：操作数据库的时候单独配置数据库链接数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nova-manage db sync \</span><br><span class="line">   --database_connection mysql+pymysql://root:secretmysql@dbserver/nova_cell0?charset=utf8</span><br></pre></td></tr></table></figure>
-<h1 id="开发查询接口"><a href="#开发查询接口" class="headerlink" title="开发查询接口"></a>开发查询接口</h1><p>报错如下：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/26098815/1696926488107-53fe9b2f-b46c-478d-a67b-a900224e5c45.png#averageHue=%232c2e20&clientId=ube672ce4-aec2-4&from=paste&height=864&id=u8892f3a1&originHeight=1080&originWidth=1920&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=501052&status=done&style=none&taskId=u70a770cd-2815-4b1e-a73b-d80da7b7951&title=&width=1536" alt="image.png"><br>引入定义装饰器的类</p>
-<h1 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h1><p>重启nova-compute立即执行定时任务。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/" data-id="cmamgeky1001dd4d176a1fpkx" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/" data-id="cmamggsdn001aqsd1aong4fay" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1764,7 +1764,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/13/OpenEuler-24.03-LTS-SP1-Antelope/" data-id="cmamgeky4001zd4d10a2pdmfg" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/05/13/OpenEuler-24.03-LTS-SP1-Antelope/" data-id="cmamggsdn001cqsd17no68z4a" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1825,7 +1825,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/07/openstack%E6%93%8D%E4%BD%9C%E5%8F%8A%E7%8A%B6%E6%80%81/" data-id="cmamgeky2001hd4d12cjl4h7v" data-title="openstack操作及状态" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2024/07/07/openstack%E6%93%8D%E4%BD%9C%E5%8F%8A%E7%8A%B6%E6%80%81/" data-id="cmamggsdv003qqsd14fr0gddp" data-title="openstack操作及状态" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1878,7 +1878,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/01/10/%E5%88%9B%E5%BB%BAwindows%E7%9A%84qcow2%E9%95%9C%E5%83%8F/" data-id="cmamgeky2001jd4d15h0c22o2" data-title="创建windows的qcow2镜像" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2024/01/10/%E5%88%9B%E5%BB%BAwindows%E7%9A%84qcow2%E9%95%9C%E5%83%8F/" data-id="cmamggsdv003rqsd14ds1bl40" data-title="创建windows的qcow2镜像" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1950,7 +1950,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/25/Fio%E6%B5%8B%E8%AF%95%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99%E6%80%A7%E8%83%BD/" data-id="cmamgekxz000vd4d1fpzidi2z" data-title="Fio测试磁盘读写性能" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2023/12/25/Fio%E6%B5%8B%E8%AF%95%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99%E6%80%A7%E8%83%BD/" data-id="cmamggsdl000uqsd1bnx7b6nj" data-title="Fio测试磁盘读写性能" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1995,7 +1995,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/25/%E5%9F%BA%E4%BA%8EDebian%E4%BD%BF%E7%94%A8docker/" data-id="cmamgeky3001nd4d150wud1vb" data-title="基于Debian使用Docker" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2023/12/25/%E5%9F%BA%E4%BA%8EDebian%E4%BD%BF%E7%94%A8docker/" data-id="cmamggsdw003tqsd11r9850w6" data-title="基于Debian使用Docker" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -2148,7 +2148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/25/%E5%B8%B8%E7%94%A8%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E9%94%A6/" data-id="cmamgeky4001wd4d1747kbhl6" data-title="常用性能测试小工具集锦" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2023/12/25/%E5%B8%B8%E7%94%A8%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E9%94%A6/" data-id="cmamggsdw003wqsd1eg6iao52" data-title="常用性能测试小工具集锦" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -2199,7 +2199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/15/Java%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/" data-id="cmamgeky0000zd4d17zbwa4fu" data-title="java安装配置" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2023/12/15/Java%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/" data-id="cmamggsdl000yqsd1cvuzhb2j" data-title="java安装配置" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -2258,7 +2258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/15/git%E4%BD%BF%E7%94%A8/" data-id="cmamgeky00011d4d1afn97dxn" data-title="git使用" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2023/12/15/git%E4%BD%BF%E7%94%A8/" data-id="cmamggsdm0010qsd138l2h1xv" data-title="git使用" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -2329,11 +2329,11 @@
       <ul>
         
           <li>
-            <a href="/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/">(no title)</a>
+            <a href="/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/">(no title)</a>
+            <a href="/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/">(no title)</a>
           </li>
         
           <li>

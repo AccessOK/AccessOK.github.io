@@ -18,6 +18,24 @@
   
   <entry>
     <title></title>
+    <link href="http://example.com/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/"/>
+    <id>http://example.com/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/</id>
+    <published>2025-05-13T11:38:58.262Z</published>
+    <updated>2025-05-13T11:38:58.262Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;nova目录分析&quot;&gt;&lt;a href=&quot;#nova目录分析&quot; class=&quot;headerlink&quot; title=&quot;nova目录分析&quot;&gt;&lt;/a&gt;nova目录分析&lt;/h1&gt;&lt;h2 id=&quot;nova组件：&quot;&gt;&lt;a href=&quot;#nova组件：&quot; class=&quot;header</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
     <link href="http://example.com/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/"/>
     <id>http://example.com/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</id>
     <published>2025-05-13T11:38:58.262Z</published>
@@ -29,24 +47,6 @@
     <summary type="html">&lt;pre&gt;&lt;code&gt;kolla提供编译镜像的功能，kolla-ansible具有部署openstack的功能。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;系统配置&quot;&gt;&lt;a href=&quot;#系统配置&quot; class=&quot;headerlink&quot; title=&quot;系统配置&quot;&gt;&lt;/a&gt;系统配</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://example.com/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/"/>
-    <id>http://example.com/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/</id>
-    <published>2025-05-13T11:38:58.262Z</published>
-    <updated>2025-05-13T11:38:58.262Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;nova目录分析&quot;&gt;&lt;a href=&quot;#nova目录分析&quot; class=&quot;headerlink&quot; title=&quot;nova目录分析&quot;&gt;&lt;/a&gt;nova目录分析&lt;/h1&gt;&lt;h2 id=&quot;nova组件：&quot;&gt;&lt;a href=&quot;#nova组件：&quot; class=&quot;header</summary>
       
     
     
@@ -242,29 +242,6 @@
   </entry>
   
   <entry>
-    <title>Python安装配置</title>
-    <link href="http://example.com/2023/12/15/Python%E7%9B%B8%E5%85%B3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    <id>http://example.com/2023/12/15/Python%E7%9B%B8%E5%85%B3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
-    <published>2023-12-15T02:27:28.000Z</published>
-    <updated>2025-05-13T11:38:58.262Z</updated>
-    
-    
-    <summary type="html">Linux Python环境配置</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="Python" scheme="http://example.com/categories/Linux/Python/"/>
-    
-    
-    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
-    
-    <category term="Python" scheme="http://example.com/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>mock编译rpm软件包</title>
     <link href="http://example.com/2023/12/15/mock%E7%BC%96%E8%AF%91rpm%E8%BD%AF%E4%BB%B6%E5%8C%85/"/>
     <id>http://example.com/2023/12/15/mock%E7%BC%96%E8%AF%91rpm%E8%BD%AF%E4%BB%B6%E5%8C%85/</id>
@@ -290,25 +267,25 @@
   </entry>
   
   <entry>
-    <title>lvm磁盘扩容</title>
-    <link href="http://example.com/2023/12/15/%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9%E6%A0%B9%E5%88%86%E5%8C%BA/"/>
-    <id>http://example.com/2023/12/15/%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9%E6%A0%B9%E5%88%86%E5%8C%BA/</id>
+    <title>Python安装配置</title>
+    <link href="http://example.com/2023/12/15/Python%E7%9B%B8%E5%85%B3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>http://example.com/2023/12/15/Python%E7%9B%B8%E5%85%B3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
     <published>2023-12-15T02:27:28.000Z</published>
-    <updated>2025-03-27T00:57:01.343Z</updated>
+    <updated>2025-05-13T11:38:58.262Z</updated>
     
     
-    <summary type="html">Linux lvm磁盘扩容到根分区</summary>
+    <summary type="html">Linux Python环境配置</summary>
     
     
     
-    <category term="Learning Tools" scheme="http://example.com/categories/Learning-Tools/"/>
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
     
-    <category term="Linux" scheme="http://example.com/categories/Learning-Tools/Linux/"/>
+    <category term="Python" scheme="http://example.com/categories/Linux/Python/"/>
     
     
     <category term="Linux" scheme="http://example.com/tags/Linux/"/>
     
-    <category term="磁盘" scheme="http://example.com/tags/%E7%A3%81%E7%9B%98/"/>
+    <category term="Python" scheme="http://example.com/tags/Python/"/>
     
   </entry>
   
@@ -332,6 +309,29 @@
     <category term="Linux" scheme="http://example.com/tags/Linux/"/>
     
     <category term="Mysql" scheme="http://example.com/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lvm磁盘扩容</title>
+    <link href="http://example.com/2023/12/15/%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9%E6%A0%B9%E5%88%86%E5%8C%BA/"/>
+    <id>http://example.com/2023/12/15/%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9%E6%A0%B9%E5%88%86%E5%8C%BA/</id>
+    <published>2023-12-15T02:27:28.000Z</published>
+    <updated>2025-03-27T00:57:01.343Z</updated>
+    
+    
+    <summary type="html">Linux lvm磁盘扩容到根分区</summary>
+    
+    
+    
+    <category term="Learning Tools" scheme="http://example.com/categories/Learning-Tools/"/>
+    
+    <category term="Linux" scheme="http://example.com/categories/Learning-Tools/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+    <category term="磁盘" scheme="http://example.com/tags/%E7%A3%81%E7%9B%98/"/>
     
   </entry>
   

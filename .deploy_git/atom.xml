@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-05-13T11:38:58.262Z</updated>
+  <updated>2025-05-13T14:53:07.423Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,58 +17,71 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://example.com/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/"/>
-    <id>http://example.com/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</id>
-    <published>2025-05-13T11:38:58.262Z</published>
-    <updated>2025-05-13T11:38:58.262Z</updated>
+    <title>openEuler openstack Antelope 部署</title>
+    <link href="http://example.com/2025/03/07/OpenEuler-24.03-LTS-SP1-Antelope/"/>
+    <id>http://example.com/2025/03/07/OpenEuler-24.03-LTS-SP1-Antelope/</id>
+    <published>2025-03-07T02:27:28.000Z</published>
+    <updated>2025-05-13T14:53:07.423Z</updated>
     
     
-      
-      
-    <summary type="html">&lt;pre&gt;&lt;code&gt;kolla提供编译镜像的功能，kolla-ansible具有部署openstack的功能。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;系统配置&quot;&gt;&lt;a href=&quot;#系统配置&quot; class=&quot;headerlink&quot; title=&quot;系统配置&quot;&gt;&lt;/a&gt;系统配</summary>
-      
+    <summary type="html">openstack操作及状态</summary>
     
     
     
+    <category term="Openstack" scheme="http://example.com/categories/Openstack/"/>
     
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://example.com/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/"/>
-    <id>http://example.com/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/</id>
-    <published>2025-05-13T11:38:58.262Z</published>
-    <updated>2025-05-13T11:38:58.262Z</updated>
+    <category term="Actions" scheme="http://example.com/categories/Openstack/Actions/"/>
+    
+    <category term="Deploy" scheme="http://example.com/categories/Openstack/Actions/Deploy/"/>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;nova目录分析&quot;&gt;&lt;a href=&quot;#nova目录分析&quot; class=&quot;headerlink&quot; title=&quot;nova目录分析&quot;&gt;&lt;/a&gt;nova目录分析&lt;/h1&gt;&lt;h2 id=&quot;nova组件：&quot;&gt;&lt;a href=&quot;#nova组件：&quot; class=&quot;header</summary>
-      
-    
-    
-    
+    <category term="openstack" scheme="http://example.com/tags/openstack/"/>
     
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://example.com/2025/05/13/OpenEuler-24.03-LTS-SP1-Antelope/"/>
-    <id>http://example.com/2025/05/13/OpenEuler-24.03-LTS-SP1-Antelope/</id>
-    <published>2025-05-13T11:38:58.262Z</published>
-    <updated>2025-05-13T11:38:58.262Z</updated>
+    <title>openstack 容器镜像编译和部署</title>
+    <link href="http://example.com/2024/08/07/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/"/>
+    <id>http://example.com/2024/08/07/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</id>
+    <published>2024-08-07T02:27:28.000Z</published>
+    <updated>2025-05-13T14:54:55.238Z</updated>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;OpenStack-Antelope-部署指南&quot;&gt;&lt;a href=&quot;#OpenStack-Antelope-部署指南&quot; class=&quot;headerlink&quot; title=&quot;OpenStack Antelope 部署指南&quot;&gt;&lt;/a&gt;OpenStack Antelop</summary>
-      
+    <summary type="html">kolla提供编译镜像的功能，kolla-ansible具有部署openstack的功能。</summary>
     
     
     
+    <category term="Openstack" scheme="http://example.com/categories/Openstack/"/>
+    
+    <category term="Program" scheme="http://example.com/categories/Openstack/Program/"/>
+    
+    <category term="Status" scheme="http://example.com/categories/Openstack/Program/Status/"/>
+    
+    
+    <category term="openstack" scheme="http://example.com/tags/openstack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>openstack usb 需求开发</title>
+    <link href="http://example.com/2024/07/07/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/"/>
+    <id>http://example.com/2024/07/07/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/</id>
+    <published>2024-07-07T02:27:28.000Z</published>
+    <updated>2025-05-13T14:54:12.373Z</updated>
+    
+    
+    <summary type="html">openstack usb透传功能开发</summary>
+    
+    
+    
+    <category term="Openstack" scheme="http://example.com/categories/Openstack/"/>
+    
+    <category term="Program" scheme="http://example.com/categories/Openstack/Program/"/>
+    
+    <category term="Status" scheme="http://example.com/categories/Openstack/Program/Status/"/>
+    
+    
+    <category term="openstack" scheme="http://example.com/tags/openstack/"/>
     
   </entry>
   

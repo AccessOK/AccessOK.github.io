@@ -12,9 +12,9 @@ layout: true
 ## 专业技能:
 
 - **编程语言 (Programming Languages)**:
-  - Java (Spring Boot, Spring Cloud)
-  - Python (用于OpenStack的自动化脚本和集成)
-  - Shell脚本 (Linux环境下的自动化运维)
+  - **Java** (Spring Boot, Spring Cloud)
+  - **Python** (用于OpenStack的自动化脚本和集成)
+  - **Shell脚本** (Linux环境下的自动化运维)
 
 - **框架和技术 (Frameworks & Technologies)**:
   - **Spring Boot**: 使用Spring Boot开发云管平台的后端服务，支持微服务架构。
@@ -28,7 +28,7 @@ layout: true
   - **Memcached**: 用于存储非关系型数据，支持灵活的数据模式和高并发。
 
 - **版本控制 (Version Control)**:
-  - Git/GitHub/GitLab: 版本管理，代码托管和团队协作。
+  - **Git/GitHub/GitLab**: 版本管理，代码托管和团队协作。
 
 - **CI/CD工具 (CI/CD Tools)**:
   - **Jenkins**: 自动化构建、测试和部署流程。
@@ -49,6 +49,21 @@ layout: true
   - **Ansible**: 用于自动化配置管理和集群部署。
 
 ## 项目经验：
+  - **Openstack**
+    - usb透传
+    - 镜像一键制作
+    - 流量分散
+    - 虚拟机高低优先级
+    - 性能调优
+    - 开发环境部署
+    - 容器镜像自动化编译
+  
+  - **云管平台**
+    - openstack4j框架封装
+    - springBoot管理平台
+
+  - **OpenEuler**
+    - **sig-tools**: OpenStack-SIG组软件包管理及部署测试工具
 
 ## 教育背景：
   - 2016.9-2020.6 北华大学 软件工程（统招二本，学信网可查） 
@@ -67,27 +82,29 @@ layout: true
      第十二届东北地区大学生程序设计竞赛三等奖；
      第十一届吉林省大学生程序设计竞赛三等奖；  
   ```
+## 学习路线
+- **java**
+  - 基础
+  - 网络编程
+  - 多线程高并发
+  - [设计模式](https://github.com/AccessOK/Java-Design-Patterns.git)
+  - 数据结构与算法
+      - [牛客](https://github.com/AccessOK/newcode.git)
+      - [leetcode]()
+  - 框架
+    - [spring](https://github.com/AccessOK/spring.git)
 
-# java
-- 基础
-- 网络编程
-- 多线程高并发
-- [设计模式](https://github.com/AccessOK/Java-Design-Patterns.git)
+- **python**
+  - [基础]()
+  - [飞机大战]()
 
-- 数据结构与算法
-    - [牛客](https://github.com/AccessOK/newcode.git)
-    - [leetcode]()
+- **Golang**
+  - [基础](https://github.com/AccessOK/golang.git)
 
-# Openstack
-- usb透传
-- 镜像一键制作
-- 流量分散
-- 虚拟机高低优先级
-- 性能调优
-- 开发环境部署
-- 容器镜像自动化编译
-- 社区自动部署工具
+- **Openstack**
+  - 部署
+  - 开发
+  - 测试
 
-# 云管平台
-- openstack4j框架封装
-- springBoot
+- **Kubernetes**
+  - 部署

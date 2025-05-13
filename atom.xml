@@ -303,29 +303,6 @@
   </entry>
   
   <entry>
-    <title>Mysql8数据库配置</title>
-    <link href="http://example.com/2023/12/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/"/>
-    <id>http://example.com/2023/12/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/</id>
-    <published>2023-12-15T02:27:28.000Z</published>
-    <updated>2025-03-27T00:57:01.342Z</updated>
-    
-    
-    <summary type="html">Linux Mysql8数据库配置</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="Mysql" scheme="http://example.com/categories/Linux/Mysql/"/>
-    
-    
-    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
-    
-    <category term="Mysql" scheme="http://example.com/tags/Mysql/"/>
-    
-  </entry>
-  
-  <entry>
     <title>lvm磁盘扩容</title>
     <link href="http://example.com/2023/12/15/%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9%E6%A0%B9%E5%88%86%E5%8C%BA/"/>
     <id>http://example.com/2023/12/15/%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9%E6%A0%B9%E5%88%86%E5%8C%BA/</id>
@@ -345,6 +322,29 @@
     <category term="Linux" scheme="http://example.com/tags/Linux/"/>
     
     <category term="磁盘" scheme="http://example.com/tags/%E7%A3%81%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql8数据库配置</title>
+    <link href="http://example.com/2023/12/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/"/>
+    <id>http://example.com/2023/12/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/</id>
+    <published>2023-12-15T02:27:28.000Z</published>
+    <updated>2025-03-27T00:57:01.342Z</updated>
+    
+    
+    <summary type="html">Linux Mysql8数据库配置</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    <category term="Mysql" scheme="http://example.com/categories/Linux/Mysql/"/>
+    
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+    <category term="Mysql" scheme="http://example.com/tags/Mysql/"/>
     
   </entry>
   

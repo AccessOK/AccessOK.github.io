@@ -7,8 +7,10 @@ layout: true
 - 基础
 - 网络编程
 - 多线程高并发
-- 设计模式
+- [设计模式](https://github.com/AccessOK/Java-Design-Patterns.git)
+
 - 数据结构与算法
+    - [牛客](https://github.com/AccessOK/newcode.git)
 
 # Openstack
 - usb透传

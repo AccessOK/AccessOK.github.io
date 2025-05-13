@@ -1,3 +1,16 @@
+---
+title: openstack usb 需求开发
+date: 2024-07-07 10:27:28
+description: openstack usb透传功能开发
+type: "tags"
+comments: true
+categories:
+- Openstack
+- Program
+- Status
+tags:
+- openstack
+---
 # nova目录分析
 ## nova组件：
 

@@ -1,4 +1,17 @@
-    kolla提供编译镜像的功能，kolla-ansible具有部署openstack的功能。
+---
+title: openstack 容器镜像编译和部署
+date: 2024-08-07 10:27:28
+description: kolla提供编译镜像的功能，kolla-ansible具有部署openstack的功能。
+type: "tags"
+comments: true
+categories:
+- Openstack
+- Program
+- Status
+tags:
+- openstack
+---
+
 ### 系统配置
 #### 关闭防火墙
 ```bash

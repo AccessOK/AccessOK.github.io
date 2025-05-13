@@ -1,3 +1,17 @@
+---
+title: openEuler openstack Antelope 部署
+date: 2025-03-07 10:27:28
+description: openstack操作及状态
+type: "tags"
+comments: true
+categories:
+- Openstack
+- Actions
+- Deploy
+tags:
+- openstack
+---
+
 # OpenStack Antelope 部署指南
 
 [TOC]

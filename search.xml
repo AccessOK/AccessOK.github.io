@@ -362,35 +362,6 @@
     
     
     <entry>
-      <title>Mysql8数据库配置</title>
-      <link href="/2023/12/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/"/>
-      <url>/2023/12/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/</url>
-      
-        <content type="html"><![CDATA[<h1 id="mysql8-0"><a href="#mysql8-0" class="headerlink" title="mysql8.0"></a>mysql8.0</h1><h2 id="mysql8-0-设置表名不区分大小写"><a href="#mysql8-0-设置表名不区分大小写" class="headerlink" title="mysql8.0 设置表名不区分大小写"></a>mysql8.0 设置表名不区分大小写</h2><ul><li>安装数据库之后不启动的情况下，修改&#x2F;etc&#x2F;my.cnf,在末行添加如下内容：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">lower_case_table_names=1</span><br></pre></td></tr></table></figure></li></ul><h2 id="mysql8-0-设置密码"><a href="#mysql8-0-设置密码" class="headerlink" title="mysql8.0 设置密码"></a>mysql8.0 设置密码</h2><ul><li>设置密码<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">mysqladmin -uroot -p<span class="string">&#x27;&#x27;</span> password <span class="string">&#x27;new-password&#x27;</span></span></span><br></pre></td></tr></table></figure></li></ul><h2 id="mysql8-0-开启远程连接"><a href="#mysql8-0-开启远程连接" class="headerlink" title="mysql8.0 开启远程连接"></a>mysql8.0 开启远程连接</h2><ul><li><p>选择mysql数据库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; use mysql</span><br></pre></td></tr></table></figure></li><li><p>更新域属性，’%’表示允许外部访问</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; update user set host=&#x27;%&#x27; where user =&#x27;root&#x27;;</span><br></pre></td></tr></table></figure></li><li><p>刷新:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure><p>将当前user和privilige表中的用户信息&#x2F;权限设置从mysql库(MySQL数据库的内置库)中提取到内存里。<br>MySQL用户数据和权限有修改后，希望在”不重启MySQL服务”的情况下直接生效，那么就需要执行这个命令。</p></li><li><p>执行授权语句</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27;WITH GRANT OPTION;</span><br></pre></td></tr></table></figure></li><li><p>关闭防火墙</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">disable</span> firewalld</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl stop firewalld</span></span><br></pre></td></tr></table></figure></li><li><p>或者开放3306端口</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">开放端口</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看端口</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">firewall-cmd --list-ports</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="保存现有数据更新数据库"><a href="#保存现有数据更新数据库" class="headerlink" title="保存现有数据更新数据库"></a>保存现有数据更新数据库</h1><p>保存指定数据库数据到sql文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -pUnion@1234 --databases ustack_test &gt; ustack_test.sql</span><br></pre></td></tr></table></figure><p>查看表结构</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc tablename;</span><br></pre></td></tr></table></figure><p>查询数据库创建时间</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT create_time  FROM information_schema.tables  WHERE table_schema = &#x27;数据库名&#x27;</span><br></pre></td></tr></table></figure><p>导出数据到sql</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -pPASSWORD  database_name &gt; name.sql</span><br></pre></td></tr></table></figure><p>导入现有sql</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Linux </category>
-          
-          <category> Mysql </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-            <tag> Mysql </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>lvm磁盘扩容</title>
       <link href="/2023/12/15/%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9%E6%A0%B9%E5%88%86%E5%8C%BA/"/>
       <url>/2023/12/15/%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9%E6%A0%B9%E5%88%86%E5%8C%BA/</url>
@@ -412,6 +383,35 @@
             <tag> Linux </tag>
             
             <tag> 磁盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Mysql8数据库配置</title>
+      <link href="/2023/12/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/"/>
+      <url>/2023/12/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mysql8-0"><a href="#mysql8-0" class="headerlink" title="mysql8.0"></a>mysql8.0</h1><h2 id="mysql8-0-设置表名不区分大小写"><a href="#mysql8-0-设置表名不区分大小写" class="headerlink" title="mysql8.0 设置表名不区分大小写"></a>mysql8.0 设置表名不区分大小写</h2><ul><li>安装数据库之后不启动的情况下，修改&#x2F;etc&#x2F;my.cnf,在末行添加如下内容：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">lower_case_table_names=1</span><br></pre></td></tr></table></figure></li></ul><h2 id="mysql8-0-设置密码"><a href="#mysql8-0-设置密码" class="headerlink" title="mysql8.0 设置密码"></a>mysql8.0 设置密码</h2><ul><li>设置密码<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">mysqladmin -uroot -p<span class="string">&#x27;&#x27;</span> password <span class="string">&#x27;new-password&#x27;</span></span></span><br></pre></td></tr></table></figure></li></ul><h2 id="mysql8-0-开启远程连接"><a href="#mysql8-0-开启远程连接" class="headerlink" title="mysql8.0 开启远程连接"></a>mysql8.0 开启远程连接</h2><ul><li><p>选择mysql数据库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; use mysql</span><br></pre></td></tr></table></figure></li><li><p>更新域属性，’%’表示允许外部访问</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; update user set host=&#x27;%&#x27; where user =&#x27;root&#x27;;</span><br></pre></td></tr></table></figure></li><li><p>刷新:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure><p>将当前user和privilige表中的用户信息&#x2F;权限设置从mysql库(MySQL数据库的内置库)中提取到内存里。<br>MySQL用户数据和权限有修改后，希望在”不重启MySQL服务”的情况下直接生效，那么就需要执行这个命令。</p></li><li><p>执行授权语句</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27;WITH GRANT OPTION;</span><br></pre></td></tr></table></figure></li><li><p>关闭防火墙</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">disable</span> firewalld</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl stop firewalld</span></span><br></pre></td></tr></table></figure></li><li><p>或者开放3306端口</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">开放端口</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看端口</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">firewall-cmd --list-ports</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="保存现有数据更新数据库"><a href="#保存现有数据更新数据库" class="headerlink" title="保存现有数据更新数据库"></a>保存现有数据更新数据库</h1><p>保存指定数据库数据到sql文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -pUnion@1234 --databases ustack_test &gt; ustack_test.sql</span><br></pre></td></tr></table></figure><p>查看表结构</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc tablename;</span><br></pre></td></tr></table></figure><p>查询数据库创建时间</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT create_time  FROM information_schema.tables  WHERE table_schema = &#x27;数据库名&#x27;</span><br></pre></td></tr></table></figure><p>导出数据到sql</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -pPASSWORD  database_name &gt; name.sql</span><br></pre></td></tr></table></figure><p>导入现有sql</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Mysql </tag>
             
         </tags>
       

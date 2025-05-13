@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-03T05:35:50.957Z</updated>
+  <updated>2025-05-13T11:38:58.262Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,90 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://example.com/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/"/>
+    <id>http://example.com/2025/05/13/kolla%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</id>
+    <published>2025-05-13T11:38:58.262Z</published>
+    <updated>2025-05-13T11:38:58.262Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;pre&gt;&lt;code&gt;kolla提供编译镜像的功能，kolla-ansible具有部署openstack的功能。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;系统配置&quot;&gt;&lt;a href=&quot;#系统配置&quot; class=&quot;headerlink&quot; title=&quot;系统配置&quot;&gt;&lt;/a&gt;系统配</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/"/>
+    <id>http://example.com/2025/05/13/nova%E5%BC%80%E5%8F%91usb%E8%BF%9B%E7%A8%8B/</id>
+    <published>2025-05-13T11:38:58.262Z</published>
+    <updated>2025-05-13T11:38:58.262Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;nova目录分析&quot;&gt;&lt;a href=&quot;#nova目录分析&quot; class=&quot;headerlink&quot; title=&quot;nova目录分析&quot;&gt;&lt;/a&gt;nova目录分析&lt;/h1&gt;&lt;h2 id=&quot;nova组件：&quot;&gt;&lt;a href=&quot;#nova组件：&quot; class=&quot;header</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2025/05/13/OpenEuler-24.03-LTS-SP1-Antelope/"/>
+    <id>http://example.com/2025/05/13/OpenEuler-24.03-LTS-SP1-Antelope/</id>
+    <published>2025-05-13T11:38:58.262Z</published>
+    <updated>2025-05-13T11:38:58.262Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;OpenStack-Antelope-部署指南&quot;&gt;&lt;a href=&quot;#OpenStack-Antelope-部署指南&quot; class=&quot;headerlink&quot; title=&quot;OpenStack Antelope 部署指南&quot;&gt;&lt;/a&gt;OpenStack Antelop</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>openstack操作及状态</title>
+    <link href="http://example.com/2024/07/07/openstack%E6%93%8D%E4%BD%9C%E5%8F%8A%E7%8A%B6%E6%80%81/"/>
+    <id>http://example.com/2024/07/07/openstack%E6%93%8D%E4%BD%9C%E5%8F%8A%E7%8A%B6%E6%80%81/</id>
+    <published>2024-07-07T02:27:28.000Z</published>
+    <updated>2025-05-12T15:39:22.645Z</updated>
+    
+    
+    <summary type="html">openstack操作及状态</summary>
+    
+    
+    
+    <category term="Openstack" scheme="http://example.com/categories/Openstack/"/>
+    
+    <category term="Actions" scheme="http://example.com/categories/Openstack/Actions/"/>
+    
+    <category term="Status" scheme="http://example.com/categories/Openstack/Actions/Status/"/>
+    
+    
+    <category term="openstack" scheme="http://example.com/tags/openstack/"/>
+    
+  </entry>
+  
+  <entry>
     <title>创建windows的qcow2镜像</title>
     <link href="http://example.com/2024/01/10/%E5%88%9B%E5%BB%BAwindows%E7%9A%84qcow2%E9%95%9C%E5%83%8F/"/>
     <id>http://example.com/2024/01/10/%E5%88%9B%E5%BB%BAwindows%E7%9A%84qcow2%E9%95%9C%E5%83%8F/</id>
     <published>2024-01-10T02:27:28.000Z</published>
-    <updated>2024-06-03T05:35:50.957Z</updated>
+    <updated>2025-03-27T00:57:01.340Z</updated>
     
     
     <summary type="html">Linux Python环境配置</summary>
@@ -44,7 +123,7 @@
     <link href="http://example.com/2023/12/25/Fio%E6%B5%8B%E8%AF%95%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99%E6%80%A7%E8%83%BD/"/>
     <id>http://example.com/2023/12/25/Fio%E6%B5%8B%E8%AF%95%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99%E6%80%A7%E8%83%BD/</id>
     <published>2023-12-25T02:27:28.000Z</published>
-    <updated>2024-06-03T05:35:50.957Z</updated>
+    <updated>2025-03-27T00:57:01.336Z</updated>
     
     
     <summary type="html">Fio测试磁盘读写性能</summary>
@@ -69,7 +148,7 @@
     <link href="http://example.com/2023/12/25/%E5%9F%BA%E4%BA%8EDebian%E4%BD%BF%E7%94%A8docker/"/>
     <id>http://example.com/2023/12/25/%E5%9F%BA%E4%BA%8EDebian%E4%BD%BF%E7%94%A8docker/</id>
     <published>2023-12-25T02:27:28.000Z</published>
-    <updated>2024-06-03T05:35:50.957Z</updated>
+    <updated>2025-05-13T11:38:58.277Z</updated>
     
     
     <summary type="html">基于Debian使用Docker</summary>
@@ -94,7 +173,7 @@
     <link href="http://example.com/2023/12/25/%E5%B8%B8%E7%94%A8%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E9%94%A6/"/>
     <id>http://example.com/2023/12/25/%E5%B8%B8%E7%94%A8%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E9%94%A6/</id>
     <published>2023-12-25T02:27:28.000Z</published>
-    <updated>2024-06-03T05:35:50.957Z</updated>
+    <updated>2025-03-27T00:57:01.341Z</updated>
     
     
     <summary type="html">常用性能测试小工具集锦</summary>
@@ -119,7 +198,7 @@
     <link href="http://example.com/2023/12/15/Java%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"/>
     <id>http://example.com/2023/12/15/Java%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</id>
     <published>2023-12-15T02:27:28.000Z</published>
-    <updated>2024-06-03T05:35:50.957Z</updated>
+    <updated>2025-03-27T00:57:01.337Z</updated>
     
     
     <summary type="html">Linux java环境配置</summary>
@@ -142,7 +221,7 @@
     <link href="http://example.com/2023/12/15/Python%E7%9B%B8%E5%85%B3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>http://example.com/2023/12/15/Python%E7%9B%B8%E5%85%B3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
     <published>2023-12-15T02:27:28.000Z</published>
-    <updated>2024-06-03T05:35:50.957Z</updated>
+    <updated>2025-05-13T11:38:58.262Z</updated>
     
     
     <summary type="html">Linux Python环境配置</summary>
@@ -165,7 +244,7 @@
     <link href="http://example.com/2023/12/15/git%E4%BD%BF%E7%94%A8/"/>
     <id>http://example.com/2023/12/15/git%E4%BD%BF%E7%94%A8/</id>
     <published>2023-12-15T02:27:28.000Z</published>
-    <updated>2024-06-03T07:37:48.853Z</updated>
+    <updated>2025-03-27T00:57:01.338Z</updated>
     
     
     <summary type="html">Linux git使用</summary>
@@ -190,7 +269,7 @@
     <link href="http://example.com/2023/12/15/mock%E7%BC%96%E8%AF%91rpm%E8%BD%AF%E4%BB%B6%E5%8C%85/"/>
     <id>http://example.com/2023/12/15/mock%E7%BC%96%E8%AF%91rpm%E8%BD%AF%E4%BB%B6%E5%8C%85/</id>
     <published>2023-12-15T02:27:28.000Z</published>
-    <updated>2024-06-03T05:35:50.957Z</updated>
+    <updated>2025-05-12T15:39:22.645Z</updated>
     
     
     <summary type="html">Linux mock编译rpm软件包</summary>
@@ -215,7 +294,7 @@
     <link href="http://example.com/2023/12/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/"/>
     <id>http://example.com/2023/12/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/</id>
     <published>2023-12-15T02:27:28.000Z</published>
-    <updated>2024-06-03T05:35:50.957Z</updated>
+    <updated>2025-03-27T00:57:01.342Z</updated>
     
     
     <summary type="html">Linux Mysql8数据库配置</summary>
@@ -238,7 +317,7 @@
     <link href="http://example.com/2023/12/15/%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9%E6%A0%B9%E5%88%86%E5%8C%BA/"/>
     <id>http://example.com/2023/12/15/%E7%A3%81%E7%9B%98%E6%89%A9%E5%AE%B9%E6%A0%B9%E5%88%86%E5%8C%BA/</id>
     <published>2023-12-15T02:27:28.000Z</published>
-    <updated>2024-06-03T05:35:50.957Z</updated>
+    <updated>2025-03-27T00:57:01.343Z</updated>
     
     
     <summary type="html">Linux lvm磁盘扩容到根分区</summary>
@@ -261,7 +340,7 @@
     <link href="http://example.com/2023/12/14/%E6%90%AD%E5%BB%BABlog/"/>
     <id>http://example.com/2023/12/14/%E6%90%AD%E5%BB%BABlog/</id>
     <published>2023-12-14T02:27:28.000Z</published>
-    <updated>2024-06-03T08:13:26.712Z</updated>
+    <updated>2025-05-13T11:38:58.277Z</updated>
     
     
     <summary type="html">梳理Blog搭建流程</summary>

@@ -52,7 +52,7 @@ yum install fio
 
 - 4k 顺序读
 
-  ```
+  ```bash
   fio -name=iouring_test -filename=/mnt/vdd/testfile -iodepth=128 -thread -rw=read -ioengine=io_uring -sqthread_poll=1 -direct=1 -bs=4k -size=10G -numjobs=1 -runtime=120 -group_reporting
   ```
 
@@ -67,8 +67,6 @@ yum install fio
   ```bash
   fio -name=iouring_test -filename=/mnt/vdd/testfile -iodepth=128 -thread -rw=rw -ioengine=io_uring -sqthread_poll=1 -direct=1 -bs=4k -size=10G -numjobs=1 -runtime=120 -group_reporting
   ```
-
-  
 
 说明：
 filename=/dev/sdb1    测试文件名称，通常选择需要测试的盘的data目录。

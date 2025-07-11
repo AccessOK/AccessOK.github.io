@@ -22,6 +22,7 @@ task_state 实例当前发生的情况
 虚拟机稳定状态和操作的关系：https://docs.openstack.org/nova/latest/reference/vm-states.html
 
 **InstanceTaskState**
+
 ```bash
 SCHEDULING = 'scheduling'
 BLOCK_DEVICE_MAPPING = 'block_device_mapping'
@@ -66,7 +67,9 @@ SHELVING_IMAGE_UPLOADING = 'shelving_image_uploading'
 SHELVING_OFFLOADING = 'shelving_offloading'
 UNSHELVING = 'unshelving'
 ```
+
 **InstanceState**
+
 ```bash
 ACTIVE = 'active'
 BUILDING = 'building'
@@ -82,6 +85,7 @@ SHELVED = 'shelved'
 SHELVED_OFFLOADED = 'shelved_offloaded'
 ```
 **serverStatus**
+
 ```bash
 _STATE_MAP = {
     vm_states.ACTIVE: {
@@ -173,7 +177,9 @@ _STATE_MAP = {
 *BUILD
 *REVERT_RESIZE
 ```
+
 **InstancePowerState**
+
 ```bash
 _UNUSED = '_unused'
 NOSTATE = 'pending'
@@ -183,11 +189,13 @@ SHUTDOWN = 'shutdown'
 CRASHED = 'crashed'
 SUSPENDED = 'suspended'
 ```
+
 # image
 
 镜像状态转换：https://docs.openstack.org/glance/train/user/statuses.html
 
 **image status**
+
 ```bash
 queued
 saving
@@ -199,7 +207,8 @@ killed
 deleted
 pending_delete
 ```
-tasks status
+
+**tasks status**
 
 ```bash
 pending
@@ -207,6 +216,7 @@ processing
 success
 failure
 ```
+
 # volume
 
 **Volume statuses**
@@ -276,7 +286,9 @@ NONE = 'none'
 STARTING = 'starting'
 
 ```
+
 # neutron
+
 ```bash
 NET_STATUS_ACTIVE = 'ACTIVE'
 NET_STATUS_BUILD = 'BUILD'

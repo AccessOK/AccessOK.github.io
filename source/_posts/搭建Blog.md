@@ -38,11 +38,10 @@ tags:
   ```
 
   可以使用n安装特定版本的nodejs。
-  
 
 ## 安装hexo
 
-​		Hexo 是**一个快速、简洁且高效的博客框架**。 Hexo 使用Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+​Hexo 是**一个快速、简洁且高效的博客框架**。 Hexo 使用Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
 
 - 配置国内源
 
@@ -67,6 +66,7 @@ tags:
   ``` bash
   npm install
   ```
+
 - 打包成dist
 
   ``` bash
@@ -87,10 +87,12 @@ tags:
   ```
 
 - 部署到服务器
+
   ```bash
   #根据_config.yaml配置文件中的仓库地址，部署到服务器。
   hexo delpoy
   ```
+
 - 替换主题
 
   ```bash
@@ -108,10 +110,12 @@ tags:
 hexo new page about
 创建成功后，编辑博客目录下 /source/about/index.md，添加 layout 属性。
 ```
+
 - 创建"Archive页"
 
 ```bash
 hexo new page archive
 创建成功后，编辑博客目录下 /source/archive/index.md。
 ```
+
 - hexo使用参考：<https://hexo.io/zh-cn/>

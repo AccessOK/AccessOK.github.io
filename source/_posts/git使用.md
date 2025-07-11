@@ -12,7 +12,9 @@ tags:
 - Linux
 - Git
 ---
+
 # 远程配置
+
 "待补充···"
 
 # 本地配置
@@ -45,16 +47,19 @@ git push origin <local-branch>:<cloud-branch>
 ```bash
 git branch -d <local-branch>
 ```
+
 # 删除远程分支
 
 ```bash
 git push origin -d <cloud-branch>
 ```
+
 # 拉取远程代码到本地分支
 
 ```bash
 git pull origin <local-branch>
 ```
+
 # 创建远程分支
 
 ```bash
@@ -72,6 +77,7 @@ git commit --amend
 ```
 
 # 添加多个远程仓库
+
 ```bash
 #添加远程仓库地址，并将其命名。
 git remote add <name> <url>

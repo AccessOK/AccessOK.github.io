@@ -49,9 +49,10 @@ enabled=1
 gpgcheck=0
 module_hotfixes=true
 """
-
 ```
+
 3、可使用root直接运行，也可创建mock用户并添加到mockbuild组中在编译
+
 ```bash
 $ mock -r example --rebuild *src.rpm
 ```
@@ -73,6 +74,7 @@ $ yum-builddep /path/to/*.spec
 # -D "_topdir `pwd`" 指定编译目录，否则会在默认目录下编译
 $ rpmbuild -ba -D "_topdir `pwd`" /path/to/*.spec
 ```
+
 # koji提交
 
 1 .安装koji
@@ -84,6 +86,7 @@ $ rpmbuild -ba -D "_topdir `pwd`" /path/to/*.spec
 # rpm module开启
 
 在repo的配置文件中添加,即可开启module模块下载
+
 ```bash
 module_hotfixes = true
 ```

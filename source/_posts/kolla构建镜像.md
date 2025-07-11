@@ -12,30 +12,43 @@ tags:
 - openstack
 ---
 
-### 系统配置
-#### 关闭防火墙
+# 系统配置
+
+## 关闭防火墙
+
 ```bash
 systemctl disable --now firewalld
 ```
-#### 配置域名
+
+## 配置域名
+
 ```bash
-#增加域名解析
+#增加容器镜像仓库域名解析
 echo "10.30.38.116 harbor.chinauos.com" >> /etc/hosts
 ```
+
 注：
 “registry.uniontech.com”和“harbor.chinauos.com” 是两个容器镜像仓库。
 其中“harbor.chinauos.com”是对外仓库，“registry.uniontech.com”是研发仓库。
-### 搭建编译环境
-#### 安装配置docker
+
+# 搭建编译环境
+
+## 安装配置docker
+
 安装docker和openstack-kolla包
+
 ```bash
 yum install moby-engine  git -y python3-devel
 ```
+
 配置docker
+
 ```bash
 systemctl enable --now  docker.service
 ```
+
 修改docker配置文件:/etc/docker/daemon.json
+
 ```bash
 {
     "insecure-registries": [
@@ -43,15 +56,19 @@ systemctl enable --now  docker.service
     ]
 }
 ```
+
 注：配置docker拉取容器镜像的仓库，配置此域名之后要配置相应的域名。
 “registry.uniontech.com”账户和密码：
 “harbor.chinauos.com”账户和密码：
 为docker配置不安全仓库之后重新启动docker服务。
+
 ```bash
 systemctl daemon-reload 
 systemctl restart docker.service 
 ```
-#### 安装openstack-kolla
+
+## 安装openstack-kolla
+
 ```bash
 #拉起openstack-kolla源码
 git clone -b victoria-source \
@@ -61,15 +78,19 @@ git clone -b victoria-source \
 pip3 install openstack-kolla/
 pip3 uninstall openstack-kolla/
 ```
+
 注：
 
 1. 安装后所有容器镜像的Dockerfile都在/usr/local/share/kolla/docker对应名称目录下。
 2. 若需要修改容器镜像找到对应的目录，更改模板文件即可。
 3. 更新sql文件，请将sql文件重新命名为ustack.sql.j2。
-#### 登录harbor仓库
+
+## 登录harbor仓库
+
 ```bash
 docker login harbor.chinauos.com
 ```
+
 Username: ustack
 Password: Ustack12#$
 参考：[https://ivanzz1001.github.io/records/post/docker/2018/04/11/docker-harbor-uage](https://ivanzz1001.github.io/records/post/docker/2018/04/11/docker-harbor-uage)
